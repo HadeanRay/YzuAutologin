@@ -1,19 +1,32 @@
-# README
+![alt text](logo.png)
 
-## About
+# YZUAutoLogin 扬州大学校园网自动登录
 
-This is the official Wails Vanilla template.
+本人非计科专业，制作这软件也仅为大概学习前后端联系，未系统接触过 go、js 教学（ AI含量极高 ），固代码逻辑可能存在很大问题，问题处理也并不健全，多请见谅🙏欢迎各位大佬协助开发解决现存问题。
 
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
+## 简介
 
-## Live Development
+`go 后端` 加 `网页前端` `wails框架` 构建的带有 ui 的校园网自动登录应用
 
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
+**原理：**
 
-## Building
+- `go - rod` 模拟网页操作点击输入账号密码登录
+- 用户数据存储于同路径 `data.json` 文件
+- 打开 `开机自启动` 后启动软件会自动执行登录校园网
 
-To build a redistributable, production mode package, use `wails build`.
+**结构**
+
+- `systry` 构建系统托盘
+- 前端 ui 组件引用 `sober` 库
+
+## 已知的问题
+
+重复隐藏、显示应用会导致系统托盘卡住，无法打开菜单
+
+开机自启动设置方式为在注册表中添加启动项，有可能会被 `windowsdefender` 阻止导致程序崩溃。
+
+理论上兼容 mac 但没有mac平台，暂时难以测试，有兴趣欢迎一起开发修改问题🙏
+
+## 应用截图
+
+![alt text](image.png)
