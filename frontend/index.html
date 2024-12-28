@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>YzuAutologin</title>
+</head>
+<body>
+
+<s-page theme="auto">
+
+    <div class="right-panel"></div>
+
+<button id="exit">X</button>
+
+<div id="config">
+  <div class="grid-container">
+
+    <div></div>
+
+      <div id="title" class="rgrid-item">
+        <h1>YzuAutologin</h1>
+      </div>
+
+      <div class="grid-item">
+          <h2>网页</h2>
+      </div>
+      <div class="rgrid-item">
+          <s-text-field label="请输入网页" id="webindex"></s-text-field>
+      </div>
+
+      <div class="grid-item">
+          <h2>账号</h2>
+      </div>
+      <div class="rgrid-item">
+          <s-text-field label="请输入账号" id="countindex"></s-text-field>
+      </div>
+
+      <div class="grid-item">
+          <h2>密码</h2>
+      </div>
+      <div class="rgrid-item">
+          <s-text-field type="password" label="请输入密码" id="passwordindex"></s-text-field>
+      </div>
+
+      <div class="grid-item">
+          <h2>运营商</h2>
+      </div>
+      <div class="rgrid-item" >
+          <s-segmented-button id="operatorindex">
+              <s-segmented-button-item value="a">
+                校园网
+              </s-segmented-button-item>
+              <s-segmented-button-item value="b">
+                  联通
+              </s-segmented-button-item>
+              <s-segmented-button-item value="c">
+                  移动
+              </s-segmented-button-item>
+              <s-segmented-button-item value="d">
+                  电信
+              </s-segmented-button-item>
+          </s-segmented-button>
+      </div>
+
+      <s-divider class="rgrid-item"></s-divider>
+
+  </div>
+</div>
+
+<div id="login" class="grid-container">
+
+    <div class="grid-item">
+        <h2>自动启动</h2>
+    </div>
+
+    <div id="buttons" class="rgrid-item">
+        <s-switch checked="false" id="autostartindex"></s-switch>
+        <s-button id="testconnectindex"> 测试连接 </s-button>
+    </div>
+
+</div>
+
+</s-page>
+
+<script src="./src/main.js" type="module"></script>
+</body>
+</html>

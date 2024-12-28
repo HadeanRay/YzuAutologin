@@ -1,0 +1,14 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "YzuAutologin",
+  "outputfilename": "YzuAutologin",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "icon": "favicon.ico",
+  "author": {
+    "name": "",
+    "email": "example@example.com"
+  }
+}
