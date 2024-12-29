@@ -3,8 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"os"
-	"time"
+    "os"
+    "path/filepath"
+    "time"
 
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/input"
@@ -23,6 +24,13 @@ type Config struct {
 
 // 读取 JSON 文件并解码
 func ReadConfig(filename string) (*Config, error) {
+    exePath, err := os.Executable()
+    if (err != nil) {
+        return nil, fmt.Errorf("failed to get executable path: %w", err)
+    }
+    exeDir := filepath.Dir(exePath)
+    fmt.Println("Executable directory:", exeDir)
+    filename = filepath.Join(exeDir, filename)
     // 打开 JSON 文件
     file, err := os.Open(filename)
     if err != nil {

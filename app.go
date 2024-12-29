@@ -6,6 +6,7 @@ import (
     "fmt"
     "os"
     "golang.org/x/sys/windows/registry"
+    "path/filepath"
 )
 
 // App struct
@@ -81,7 +82,14 @@ func (a *App) SaveValue(data map[string]string) error {
 
 // ReadData reads the data from data.json file
 func (a *App) ReadData() (map[string]string, error) {
-    file, err := os.Open("data.json")
+    exePath, err := os.Executable()
+    if (err != nil) {
+        return nil, fmt.Errorf("failed to get executable path: %w", err)
+    }
+    exeDir := filepath.Dir(exePath)
+    fmt.Println("Executable directory:", exeDir)
+    filename := filepath.Join(exeDir, "data.json")
+    file, err := os.Open(filename)
     if err != nil {
         return nil, err
     }
